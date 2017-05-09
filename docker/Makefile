@@ -31,7 +31,6 @@ run: ## Run a shell inside the docker continer
 
 shell: ## Run a shell inside the docker continer 
 	@docker run --rm --name $(NAME)-$(INSTANCE) -i -t $(PORTS) \
-	-v $(Full_PATH_TO_OPENWRT):/openwrt \
 	-v $(Full_PATH_TO_REDIS):/home/openwrt/openwrt/package/redis \
 	$(NS)/$(REPO):$(VERSION) sudo -iu openwrt bash
 
