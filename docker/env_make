@@ -5,9 +5,6 @@
 Full_PATH_TO_REDIS= \
 /build/GEE/infrastructure_management/openwrt-ipkg-redis/data/
 
-Full_PATH_TO_OPENWRT= \
-/build/openwrt/
-
 
 PORTS = \
 # -p 8080:80

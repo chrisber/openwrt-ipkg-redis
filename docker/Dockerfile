@@ -16,20 +16,15 @@ RUN useradd -m openwrt
 RUN mkdir -p /etc/sudoers.d
 RUN echo 'openwrt ALL=NOPASSWD: ALL' > /etc/sudoers.d/openwrt
 RUN sudo -iu openwrt git clone git://git.openwrt.org/15.05/openwrt.git
-# RUN sudo -iu openwrt openwrt/scripts/feeds update
-# RUN sudo -iu openwrt openwrt/scripts/feeds update
 ADD ./.config .config
 RUN chown openwrt:openwrt .config
-RUN ls -la .config
+
 
 USER openwrt
     WORKDIR /home/openwrt/openwrt/
     RUN ./scripts/feeds update -a
     RUN ./scripts/feeds install -a
     RUN make oldconfig
-    RUN make defconfig
-    RUN make oldconfig
-    RUN make -j 1
-
+    RUN make -j 4
 
 USER root
