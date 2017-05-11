@@ -53,4 +53,5 @@ docker cp b4c2ad31325c:/home/openwrt/openwrt/.config <Fullpath to git repo>openw
 ```
 
 ## Note UCLIB vs MUSL
-MUSL does not define a __MUSL__ macro
+MUSL does not define a __MUSL__ macro for musl add:
+``
